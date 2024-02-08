@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#navigation-container {
+    position: relative;
+    background-color: purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 5px 15px;
+    opacity: 0.7;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+li > a:hover::after, li > a.active-nav::after {
+  width: 100%;
+  background: black;
+}
+* {
+        box-sizing: border-box;
+      }
+      .openBtn {
+        display: flex;
+        justify-content: left;
+      }
+      .openButton {
+        border: none;
+        border-radius: 5px;
+        background-color: #1c87c9;
+        color: white;
+        padding: 14px 20px;
+        cursor: pointer;
+        position: fixed;
+      }
+      .loginPopup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      .formPopup {
+        display: none;
+        position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 9;
+      }
+      .formContainer {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      .formContainer input[type=text],
+      .formContainer input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+      }
+      .formContainer input[type=text]:focus,
+      .formContainer input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+      }
+      .formContainer .cancel {
+        background-color: #cc0000;
+      }
+      .formContainer .btn:hover,
+      .openButton:hover {
+        opacity: 1;
+      }
+</style>
+<head>
+        
+    </head>
+    <body>
+      <script>
+      function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+    </script>
+
+        <div class="navigation-bar">
+      
+      
+          <div id="navigation-container">
+      
+            <img src="logo-2-transparent.png" height="50 px">
+      
+            <ul>
+              <li><a class="active-nav" href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Bookings</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#" onclick="openForm()"><i class="fa fa-fw fa-user"></i>Sign in</a></li>
+            </ul>
+          </div>
+
+          <div class="loginPopup">
+      <div class="formPopup" id="popupForm">
+        <form action="/action_page.php" class="formContainer">
+          <h2>Please Log in</h2>
+          <label for="email">
+            <strong>E-mail</strong>
+          </label>
+          <input type="text" id="email" placeholder="Your Email" name="email" required>
+          <label for="psw">
+            <strong>Password</strong>
+          </label>
+          <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+          <button type="submit" class="btn">Log in</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+    </div>
+
+
+          <div><img src ="adc.jpg" width="100%"></div>
+           
+      
+      </body>
+</html> 
